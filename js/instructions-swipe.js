@@ -340,8 +340,6 @@ Swipe.prototype = {
 		
 		$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/standard/title0" + index_plus_one +".png"});
 		
-		$('#item0 img').css('display', 'none');
-		$('#item0 img').fadeIn(300);
  
 	  }, 
 	  
