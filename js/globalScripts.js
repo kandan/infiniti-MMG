@@ -1,5 +1,5 @@
 ﻿// JavaScript Document
-var main ="http://maps.google.com.au/maps?saddr=CurrentLocation&hl=en&mra=mdsmb&disamb=0&t=m&z=10"
+var main ="http://maps.google.com.au/maps?saddr=Current%20Location&hl=en&mra=mdsmb&disamb=0&t=m&z=10"
 
 
 
