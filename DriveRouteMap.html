@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html class="">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>infiniti slider</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/cordova-1.7.0.js"></script>
+<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+</head>
+<body>
+<section>
+		<ul id="main-nav"> 
+    <li style="width:90px;"><a href="home.html"><img src="images/nav-1.png" width="90" height="55"></a></li>
+    <li style="width:152px;"><a href="DriveRouteMap.html"><img src="images/nav-2-on.png" width="152" height="55"></a></li>
+    <li style="width:198px;"><a href="DriveRouteInstructions.html"><img src="images/nav-3.png" width="198" height="55"></a></li>
+    <li style="width:129px;"><a href="#"><img src="images/nav-4.png" width="129" height="55"></a></li>
+    <li style="width:121px;"><a href="#"><img src="images/nav-5.png" width="121" height="55"></a></li>
+    <li style="width:110px;"><a href="#"><img src="images/nav-6.png" width="110" height="55"></a></li>
+    <li style="width:113px;"><a href="#"><img src="images/nav-7.png" width="113" height="55"></a></li>
+    <li style="width:103px;"><a href="#"><img src="images/nav-8.png" width="103" height="55"></a></li>
+  </ul>
+  <div class="nav"><!--<a href="#" onClick="slider4.slide(4, 500);" class="swipe leg4Btn4"></a>-->
+				   <a href="#" onClick="slider4.slide(3, 500);" class="swipe leg3Btn3 three"></a> 
+                   <a href="#" onClick="slider4.slide(2, 500);" class="swipe leg2Btn2"></a> 
+                   <a href="#" onClick="slider4.slide(1, 500);" class="swipe leg1Btn1"></a> 
+                   <a href="#" onClick="slider4.slide(0, 500);" class="swipe leg0Btn0"></a> 
+    <div class="topNavTxt"><img src="images/Leg00-title.png" /></div>
+  </div>
+  <div id='slider4' class='swipe'>
+    <div>
+      
+      <div id="item0" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map3" />
+        
+      </div>
+      <div id="item1" style='display:none; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map" />
+<map name="Map" id="Map">
+     <area shape="rect" coords="322,246,415,283" href="DriveRouteInstructions.html?instru=0" />
+     <area shape="rect" coords="425,246,513,282" href="http://maps.google.com.au/maps?f=d&amp;source=embed&amp;saddr=Kojonup,+Western+Australia&amp;daddr=Katanning,+Western+Australia&amp;hl=en&amp;geocode=FQm--_0dhLT7Binf-XZH1Eo3KjGQ-HkkOPYABA%3BFdvt_f0dUsMBBynRiTXG1j83KjFQ-HkkOPYABA&amp;aq=0&amp;oq=Katan&amp;sll=-29.678885,123.988893&amp;sspn=15.354031,25.400391&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;ll=-33.761805,117.35751&amp;spn=0.14331,0.39708" />
+</map>
+      </div>
+      <div id="item2" style='display:none; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map2" />
+      <map name="Map2" id="Map2">
+     <area shape="rect" coords="538,305,639,345" href="DriveRouteInstructions.html?instru=1" />
+     <area shape="rect" coords="648,308,739,344" href="googleMaps.html?map=map2" />
+</map>
+      </div>
+      <div id="item3" style='display:none ; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map3" />
+      <map name="Map3" id="Map3">
+     	<area shape="rect" coords="373,307,494,352"href="googleMaps.html?map=map3" />
+		</map> 
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+  <script type="text/javascript" src="js/swipe.js"></script> 
+  <script>
+        var slider4 = new Swipe(document.getElementById('slider4'));
+        </script> 
+  
+  <script type="text/javascript" src="js/jq.js"></script>
+  <script type="text/javascript" src="js/loadImages.js"></script> 
+</section>
+</body>
+</html>

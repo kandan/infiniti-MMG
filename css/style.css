@@ -1,0 +1,203 @@
+@import url("scrollStyles.css");
+
+/*
+ ####################################################################################     main structure
+*/
+
+
+/* main section is 0 opacity for FadeIn by default*/
+#mainSection {
+	 
+}
+
+
+section{ width:1024px; height:50%; margin:0 auto; }
+section ul  {
+	margin:0 0px 0 0px; background:url(../images/bg-nav.png) repeat-x 0 0;  width:985px;	
+}
+
+section ul li {	
+	counter-reset:listnumbering; display:inline; margin:0 -4px; padding:0;
+}
+section ul li:first-child {
+	margin:0 0 0 -40px;
+	
+}
+section ul li:last-child {
+	margin:0 0 0 22px;
+	
+}
+
+section ul.iscroll {
+	background: none;
+}
+	
+section ul.iscroll li:first-child,
+section ul.iscroll li:last-child {
+	margin:0;
+}
+
+
+
+
+/*
+ ####################################################################################     nav
+*/
+
+
+.nav{ height:40px; width:1024px; background:url(../images/subNav.jpg) repeat-x 0 0; z-index:99;   }
+.nav a{ float:right; color:white; text-decoration:none;}
+
+
+@charset "UTF-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Mobile Layout: 480px and below. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+/*
+ ####################################################################################     sub nav
+*/
+.leg0Btn0{ background: url(../images/leg0.jpg) no-repeat 0 0; width:100px; height:20px;}
+.leg0Btn0Active{ background: url(../images/leg0.jpg) no-repeat 0 -41px; width:100px; height:20px;}
+
+.leg1Btn1{ background: url(../images/leg1.jpg) no-repeat 0 0; width:77px; height:20px;}
+.leg1Btn1Active{ background: url(../images/leg1.jpg) no-repeat 0 -41px; width:77px; height:20px;}
+
+.leg2Btn2{ background: url(../images/leg2.jpg) no-repeat 0 0; width:72px; height:20px;}
+.leg2Btn2Active{ background: url(../images/leg2.jpg) no-repeat 0 -41px; width:72px; height:20px;}
+
+.leg3Btn3{ background: url(../images/leg3.jpg) no-repeat 0 0; width:72px; height:20px;}
+.leg3Btn3Active{ background: url(../images/leg3.jpg) no-repeat 0 -41px; width:72px; height:20px;}
+
+.leg4Btn4{ background: url(../images/leg4.jpg) no-repeat 0 0; width:82px; height:20px;}
+.leg4Btn4Active{ background: url(../images/leg4.jpg) no-repeat 0 -41px; width:82px; height:20px;}
+
+.topNavTxt{ width:222px; height:22px; display:block; margin:0px 0 0 15px; padding:10px 0 0 0;}
+.topInstructionsNavTxt{ width:355px; height:39px; display:block; margin:0px 0 0 0px; padding:1px 0 0 0;}
+
+/*
+ ####################################################################################     HOME
+*/
+
+#content-1 {
+	width: 1024px;
+	height: 713px;
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg-homepage.jpg) no-repeat top left;
+}
+
+#content-1 a.btn-start {
+	position: absolute;
+	margin-left: 45px;
+	top: 600px;
+}
+
+#content-1 a.btn-alternative {
+	position: absolute;
+	margin-left: 45px;
+	top: 690px;
+}
+
+
+/*
+ ####################################################################################     footer
+*/
+footer{ background: #999 url(../images/map_footer.jpg); height:40px; margin:-20px 0 0 0; padding:0; }
+/*
+ ####################################################################################     Easy Slider 
+*/
+/* // Easy Slider */
+.swipe {
+  padding-bottom:20px;
+}
+.swipe li div, .swipe div div div {
+  margin:0 0px;
+  padding:0px 0px;
+  color:#fff;
+  font-size:20px;
+  text-align:center;
+}
+
+#myFrame {
+	position:absolute;
+	top:0; left:0;
+}
+
+
+a.three {margin:0 15px 0 0;}

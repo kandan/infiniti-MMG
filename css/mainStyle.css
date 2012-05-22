@@ -1,0 +1,46 @@
+@charset "UTF-8";
+body {
+	font-family:InfinitiMeta;
+	background-color: #000;
+	margin: 0px;
+	padding: 0px;
+	height: 768px;
+	width: 1024px;
+	border: 0px solid #000;
+	overflow:hidden;
+}
+
+#container {
+	margin: 0px;
+	padding: 0px;
+	height: 768px;
+	width: 1024px;
+	overflow: hidden;
+	background-color: #000;
+}
+
+#container #introVideo {	
+	margin: 0px;
+	padding: 0;
+	width:1024px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:100;
+}
+
+
+/* Positioning */
+
+.centered{ margin:0 auto; width:80%;}
+
+a, a:link, a:hover, a:visited, a:active, {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
