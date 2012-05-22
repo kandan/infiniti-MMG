@@ -4,10 +4,37 @@
 <meta charset="UTF-8">
 <title>Infinit-Test-App</title>
 <link href="css/mainStyle.css" rel="stylesheet" type="text/css" />
-<script src="js/globalScripts.js"></script>
+<script src="js/globalScripts.js">
+</script>
+
 <script  type="text/javascript" src="js/cordova-1.7.0.js"></script>
-<script src="./js/childbrowser.js"></script>
+<script src="js/childbrowser.js"></script>
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+
+<script type="text/javascript">
+    var childbrowser;
+
+    function onBodyLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    
+    }
+
+    function onDeviceReady() {
+      navigator.notification.alert("Cordova is working");
+    }
+
+    function onLinkClick() {
+        window.plugins.childBrowser.onLocationChange = function(loc){ alert("In index.html new loc = " + loc); };
+        window.plugins.childBrowser.onClose = function(){alert("In index.html child browser closed");};
+        window.plugins.childBrowser.onOpenExternal = function(){alert("In index.html onOpenExternal");};        
+
+        window.plugins.childBrowser.showWebPage('http://www.google.com',
+                                        { showLocationBar: true });
+        console.log(window.plugins.childBrowser);
+        
+    }
+    </script>
+
 <script type='text/javascript'>
 	
 	var mediaTimer = setInterval(function() {
@@ -44,6 +71,7 @@ function checkVideoEnd()
 
 <body onload="checkVideoEnd()">
 <div id="container"><div id="skip"><br>
+ <p><a href="#" onclick="onLinkClick()">Click here</a> to open a child browser window to Google</p>
 <br>
 <a href="home.html">Skip</a></div>
      <video id="introVideo" width="1024" height="768" autoplay>

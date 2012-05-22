@@ -4,7 +4,7 @@
 	id		= "com.phonegap.getting.started"
 	version 	= "1.0.0">
 
-	<name>Infiniti-APP</name>
+	<name>Infiniti-APP V1.0</name>
 
 	<description>
 		Testing element for the infiniti app
@@ -17,8 +17,12 @@
 
 	<icon src="icon.png" gap:role="default" />
 
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
-	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://plugins.phonegap.com/ChildBrowser/2.0.1" />
 	<preference name="orientation" value="landscape" />
+	<preference name="fullscreen" value="true" />
+	<gap:splash src="splashes/ipad-landscape.png" width="1024" height="748"/>
+	
+	 <!-- This is the whitelist. For ChildBrowser to work correctly you need to enable domains here -->
+        <access origin="google.com" subdomains="true" />
+        <access origin="phonegap.com" subdomains="true" />  
 </widget>
