@@ -44,3 +44,18 @@ a, a:link, a:hover, a:visited, a:active, {
 	border-bottom-width: 0px;
 	border-left-width: 0px;
 }
+
+#skipIntro-btn {
+	background-image: url(../images/skip-intro.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin: 650px 0 0 445px;
+	padding: 0px;
+	height: 37px;
+	width: 136px;
+	overflow: hidden;
+	position: relative;
+	z-index: 180;
+	left: 0px;
+	bottom: 0px;
+}

@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Infinit-Test-App</title>
+<title>Infinit-Intro</title>
 <meta charset="utf-8">
 <link href="css/mainStyle.css" rel="stylesheet" type="text/css" />
-<script src="js/globalScripts.js"></script>
 <script  type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
 <script type="text/ecmascript" charset="utf-8" src="js/childbrowser.js"></script>
 
@@ -16,7 +15,7 @@
 	checkVideoEnd();
 	
 	 
-}, 500);
+}, 150);
 
 
 function checkVideoEnd()
@@ -34,12 +33,6 @@ function checkVideoEnd()
 		}
 	}
 	
-	function loadWindow(){
-		window.plugins.childBrowser.onOpenExternal = function () {
-    	alert('opening Mobile Safari');
-			};
-		}
-	
 </script>
 </head>
 
@@ -47,6 +40,7 @@ function checkVideoEnd()
 
 <a href="home.html">
 <div id="container">
+	<div id="skipIntro-btn"></div>
      <video id="introVideo" width="1024" height="768" autoplay>
      <source src="video/movie.mp4" type="video/mp4" />
      </video>      
