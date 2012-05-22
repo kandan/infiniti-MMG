@@ -4,14 +4,14 @@
 	id		= "com.phonegap.getting.started"
 	version 	= "1.0.0">
 
-	<name>Infiniti Test App</name>
+	<name>Infiniti-APP</name>
 
 	<description>
 		Testing element for the infiniti app
 	</description>
 
 	<author href="http://kandan.com.au"
-		email="michael.cooper@kandan.com.au">
+		email="developer@kandan.com.au">
 		Michael Cooper
 	</author>
 
