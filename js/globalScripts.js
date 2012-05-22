@@ -17,14 +17,14 @@ var pictureSource;   // picture source
     // Called when a photo is successfully retrieved
     //
 	function getImage() {
-		
+		alert("open camera");
 	    navigator.device.capture.captureImage(onSuccess, onFail,
 	
 									{ 
 									  limit: 1,
 									  quality: 75,
 									  allowEdit: true,
-								      destinationType: destinationType.DATA_URI
+								      destinationType: destinationType.FILE_URI
 									}
 	);
 	}
