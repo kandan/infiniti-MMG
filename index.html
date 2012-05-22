@@ -9,30 +9,6 @@
 <script  type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
 <script type="text/ecmascript" charset="utf-8" src="js/childbrowser.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-    var childbrowser;
-
-    function onBodyLoad() {
-      document.addEventListener("deviceready", onDeviceReady, false);
-    
-    }
-
-    function onDeviceReady() {
-      navigator.notification.alert("Cordova is working");
-    }
-
-    function onLinkClick() {
-        window.plugins.childBrowser.onLocationChange = function(loc){ alert("In index.html new loc = " + loc); };
-        window.plugins.childBrowser.onClose = function(){alert("In index.html child browser closed");};
-        window.plugins.childBrowser.onOpenExternal = function(){alert("In index.html onOpenExternal");};        
-
-        window.plugins.childBrowser.showWebPage('http://www.google.com',
-                                        { showLocationBar: true });
-        console.log(window.plugins.childBrowser);
-        
-    }
-    </script>
-
 <script type='text/javascript'>
 	
 	var mediaTimer = setInterval(function() {
@@ -69,15 +45,12 @@ function checkVideoEnd()
 
 <body onload="checkVideoEnd()">
 
-<p><a href="#" onclick="onLinkClick()">Click here</a> to open a child browser window to Google</p>
-<!--<div id="container"><div id="skip"><br>
- 
-<br>
-<a href="home.html">Skip</a></div>
+<a href="home.html">
+<div id="container">
      <video id="introVideo" width="1024" height="768" autoplay>
      <source src="video/movie.mp4" type="video/mp4" />
-     </video>
-          
-</div>-->
+     </video>      
+</div>
+</a>
 </body>
 </html>
