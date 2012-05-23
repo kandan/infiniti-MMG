@@ -51,7 +51,7 @@ section ul.iscroll li:last-child {
 */
 
 
-.nav{ height:40px; width:1024px; background:url(../images/subNav.jpg) repeat-x 0 0; z-index:99;   }
+.nav{ height:40px; width:1024px; background:url(../images/subNav.png) repeat-x 0 0; z-index:99;   }
 .nav a{ float:right; color:white; text-decoration:none;}
 
 
@@ -138,23 +138,31 @@ img, object, embed, video {
 /*
  ####################################################################################     sub nav
 */
-.leg0Btn0{ background: url(../images/leg0.jpg) no-repeat 0 0; width:100px; height:20px;}
-.leg0Btn0Active{ background: url(../images/leg0.jpg) no-repeat 0 -41px; width:100px; height:20px;}
+.leg0Btn0{ background: url(../images/leg0.png) no-repeat 0 0; width:100px; height:20px;}
+.leg0Btn0Active{ background: url(../images/leg0-on.png) no-repeat 0 0px;}
 
-.leg1Btn1{ background: url(../images/leg1.jpg) no-repeat 0 0; width:77px; height:20px;}
-.leg1Btn1Active{ background: url(../images/leg1.jpg) no-repeat 0 -41px; width:77px; height:20px;}
+.leg1Btn1{ background: url(../images/leg1.png) no-repeat 0 0; width:77px; height:20px;}
+.leg1Btn1Active{ background: url(../images/leg1-on.png) no-repeat 0 0px; }
 
-.leg2Btn2{ background: url(../images/leg2.jpg) no-repeat 0 0; width:72px; height:20px;}
-.leg2Btn2Active{ background: url(../images/leg2.jpg) no-repeat 0 -41px; width:72px; height:20px;}
+.leg2Btn2{ background: url(../images/leg2.png) no-repeat 0 0; width:72px; height:20px;}
+.leg2Btn2Active{ background: url(../images/leg2-on.png) no-repeat 0 0px; }
 
-.leg3Btn3{ background: url(../images/leg3.jpg) no-repeat 0 0; width:72px; height:20px;}
-.leg3Btn3Active{ background: url(../images/leg3.jpg) no-repeat 0 -41px; width:72px; height:20px;}
+.leg3Btn3{ background: url(../images/leg3.png) no-repeat 0 0; width:72px; height:20px;}
+.leg3Btn3Active{ background: url(../images/leg3-on.png) no-repeat 0 0px;}
 
-.leg4Btn4{ background: url(../images/leg4.jpg) no-repeat 0 0; width:82px; height:20px;}
-.leg4Btn4Active{ background: url(../images/leg4.jpg) no-repeat 0 -41px; width:82px; height:20px;}
+.leg4Btn4{ background: url(../images/leg4.png) no-repeat 0 0; width:82px; height:20px;}
+.leg4Btn4Active{ background: url(../images/leg4-on.png) no-repeat 0 0px;}
 
-.topNavTxt{ width:222px; height:22px; display:block; margin:0px 0 0 15px; padding:10px 0 0 0;}
+.topNavTxt{ width:355px; height:39px; display:block; margin:0px 0 0 0px; padding:1px 0 0 0;}
 .topInstructionsNavTxt{ width:355px; height:39px; display:block; margin:0px 0 0 0px; padding:1px 0 0 0;}
+
+
+.carFx1{ background:url(../images/cars/cars-fx.png) no-repeat 0 0; width:125px; height:20px;}
+.carFx1Active{ background:url(../images/cars/cars-fx-on.png) no-repeat 0 0; width:125px; height:20px;}
+
+.carM1{ background:url(../images/cars/cars-M.png) no-repeat 0 0; width:125px; height:20px;}
+.carM1Active{ background:url(../images/cars/cars-M-on.png) no-repeat 0 0; width:125px; height:20px;}
+
 
 /*
  ####################################################################################     HOME

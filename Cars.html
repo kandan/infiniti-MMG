@@ -21,19 +21,19 @@
             <li style="width:103px;"><img src="images/nav-8.png" width="103" height="55"></li>
 		</ul>
   <div class="nav">
-                   <a href="#" onClick="slider4.slide(1, 500);" class="swipe leg2Btn2"></a>
-                   <a href="#" onClick="slider4.slide(0, 500);" class="swipe leg1Btn1"></a>
+                   <a href="#" onClick="slider4.slide(1, 500);" class="swipe carM1"></a>
+                   <a href="#" onClick="slider4.slide(0, 500);" class="swipe carFx1 carFx1Active"></a>
                    
-    <div class="topInstructionsNavTxt"><img src="images/blank.png" width="355" height="39" /></div>
+    <div class="CarsNavTxt"><img src="images/cars/infiniti-cars.png" width="355" height="39" /></div>
   </div>
   <div id='slider4' class='swipe'>
     <div>
     
     
-      <div id="item0" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" />
+      <div id="item55" style='display:block; color:#FFF;'><img src="images/cars/infiniti-fx-large.jpg" width="1024" height="674" />
       </div>
       
-      <div id="item1" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" />
+      <div id="item56" style='display:none; color:#FFF;'><img src="images/cars/infiniti-M-large.jpg" width="1024" height="674" />
       </div>
       
       
@@ -44,7 +44,27 @@
   </div>
   </div>
   </div>
-  
+  <script type="text/javascript" src="js/swipe.js"></script> 
+  <script>
+        var slider4 = new Swipe(document.getElementById('slider4'));
+		
+		
+		$(document).ready(function(){
+			
+			
+				
+			$(".carFx1").click(function(){
+				$(".carM1").removeClass("carM1Active");
+				$(this).addClass("carFx1Active");
+				});
+			$(".carM1").click(function(){
+				$(".carFx1").removeClass("carFx1Active");
+				$(this).addClass("carM1Active");
+				});
+				
+			
+			});
+        </script> 
   <script type="text/javascript" src="js/instructions-swipe.js"></script> 
   <script type="text/javascript" src="js/loadCars.js"></script> 
 </section></body>

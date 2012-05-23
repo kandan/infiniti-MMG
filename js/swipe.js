@@ -334,7 +334,7 @@ Swipe.prototype = {
 		
 		$(navString).addClass("leg"+num+"Btn"+num+"Active");
 		
-		$('.topNavTxt img').attr("src", "images/Leg0"+num+"-title.png");		
+		$('.topNavTxt img').attr({ src: "images/Leg0"+num+"-title.png", height:"39", width:"355"});		
 		
 		$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/standard/title0" + num +".png"});
 		console.log("swap index = " + num);
