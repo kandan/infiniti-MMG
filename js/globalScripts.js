@@ -1,6 +1,6 @@
 ﻿// JavaScript Document
 
-var pictureSource;   // picture source
+	var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for Cordova to connect with the device
@@ -17,14 +17,11 @@ var pictureSource;   // picture source
     // Called when a photo is successfully retrieved
     //
 	function getImage() {
-		alert("open camera");
+		
 	    navigator.device.capture.captureImage(onSuccess, onFail,
 	
 									{ 
-									  limit: 1,
-									  quality: 75,
-									  allowEdit: true,
-								      destinationType: destinationType.FILE_URI
+									  limit: 1
 									}
 	);
 	}
@@ -36,62 +33,22 @@ var pictureSource;   // picture source
 	}
 
 
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
+    
 
     // Called when a photo is successfully retrieved
     //
     function onSuccess(imageURI) {
       // Uncomment to view the image file URI 
-
+	alert('Your Image has been stored in the image library.');
       // Get image handle
       //
-      var imageTaken = document.getElementById('imageTaken');
-
-      // Unhide image elements
-      //
-      imageTaken.style.display = 'block';
-	  
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      imageTaken.src = imageURI;
     }
 
     
     
 	
 
-	function onFail(message) {
-	    alert('Failed because: ' + message);
-	}
-
-
-    // A button will call this function
-    //
-   
-
-    // Called if something bad happens.
-    // 
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
+    
 
 
 
