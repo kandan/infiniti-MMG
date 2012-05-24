@@ -23,5 +23,14 @@
 	
 	 <!-- This is the whitelist. For ChildBrowser to work correctly you need to enable domains here -->
         <access origin="google.com" subdomains="true" />
-        <access origin="phonegap.com" subdomains="true" />  
+        <access origin="phonegap.com" subdomains="true" />
+		<key>ExternalHosts</key>
+		<array>
+		    <string>*</string>
+			<string>*.google.com.au</string>
+			<string>www.youtube.com</string>
+			<string>m.youtube.com</string>
+			<string>maps.google.co.nz</string>
+			<string>173.194.66.94</string>
+		</array>
 </widget>
