@@ -6,10 +6,10 @@
 <title>infiniti slider</title>
 <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" charset="utf-8" src="js/cordova-1.7.0.js"></script>
-<script src="js/globalScripts.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+<script type="text/javascript" src="js/childbrowser.js"></script>
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
-
+<script type="text/javascript" src="js/swipe.js"></script> 
 </head>
 <body>
 <section>
@@ -23,8 +23,8 @@
     <li style="width:113px;"><a href="#" onClick="getImage();"><img src="images/nav-7.png" width="113" height="55"></a></li>
     <li style="width:103px;"><img src="images/nav-8.png" width="103" height="55"></li>
   </ul>
-  <div class="nav"><!--<a href="#" onClick="slider4.slide(4, 500);" class="swipe leg4Btn4"></a>-->
-				   <a href="#" onClick="slider4.slide(3, 500);" class="swipe leg3Btn3 three"></a> 
+  <div class="nav"><a href="#" onClick="slider4.slide(4, 500);" class="swipe leg4Btn4"></a>
+				   <a href="#" onClick="slider4.slide(3, 500);" class="swipe leg3Btn3"></a> 
                    <a href="#" onClick="slider4.slide(2, 500);" class="swipe leg2Btn2"></a> 
                    <a href="#" onClick="slider4.slide(1, 500);" class="swipe leg1Btn1"></a> 
                    <a href="#" onClick="slider4.slide(0, 500);" class="swipe leg0Btn0"></a> 
@@ -36,147 +36,46 @@
       <div id="item0" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" />
         
       </div>
-      <div id="item1" style='display:none; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map" />
+      <div id="item1" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map" />
 <map name="Map" id="Map">
-     <area shape="rect" coords="322,246,415,283" href="DriveRouteInstructions.html?instru=0" />
-     <area shape="rect" coords="425,246,513,282" href="http://maps.google.com.au/maps?f=d&amp;source=embed&amp;saddr=Kojonup,+Western+Australia&amp;daddr=Katanning,+Western+Australia&amp;hl=en&amp;geocode=FQm--_0dhLT7Binf-XZH1Eo3KjGQ-HkkOPYABA%3BFdvt_f0dUsMBBynRiTXG1j83KjFQ-HkkOPYABA&amp;aq=0&amp;oq=Katan&amp;sll=-29.678885,123.988893&amp;sspn=15.354031,25.400391&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;ll=-33.761805,117.35751&amp;spn=0.14331,0.39708" />
+     <area shape="rect" coords="322,246,415,283" href="#" onClick="loadMap(MMG1);" />
+     <area shape="rect" coords="425,246,513,282" href="DriveRouteInstructions.html?instru=0" />
 </map>
       </div>
-      <div id="item2" style='display:none; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map2" />
+      <div id="item2" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map2" />
       <map name="Map2" id="Map2">
-     <area shape="rect" coords="538,305,639,345" href="DriveRouteInstructions.html?instru=1" />
-     <area shape="rect" coords="648,308,739,344" href="googleMaps.html?map=map2" />
+     <area shape="rect" coords="538,305,639,345" href="#" onClick="loadMap(MMG2);" />
+     <area shape="rect" coords="648,308,739,344" href="DriveRouteInstructions.html?instru=1" />
 </map>
       </div>
       <div id="item3" style='display:none ; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map3" />
       <map name="Map3" id="Map3">
-     	<area shape="rect" coords="373,307,494,352"href="googleMaps.html?map=map3" />
+     	<area shape="rect" coords="373,307,494,352"href="DriveRouteInstructions.html?instru=2" />
 		</map> 
+      </div>
+      <div id="item4" style='display:none ; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map4" />
+      <map name="Map4" id="Map4">
+     <area shape="rect" coords="291,310,387,341" href="#" onClick="loadMap(MMG4);"  alt="googleMap4" />
+     <area shape="rect" coords="392,310,487,341" href="DriveRouteInstructions.html?instru=3" alt="route4" />
+</map>
       </div>
     </div>
   </div>
   <footer></footer>
-  <script type="text/javascript" src="js/swipe.js"></script> 
-  <script>
-        var slider4 = new Swipe(document.getElementById('slider4'));
-        </script> 
-  
+ <script>var slider4 = new Swipe(document.getElementById('slider4'));
+ 
+ var num_of_slides = slider4.length;
+ console.log("num_of_slides = " + num_of_slides);
+ slider4.loadImages(0,num_of_slides,0);
+ 
+ $('#item0 img').css('display', 'none');
+ $('#item0 img').fadeIn(750);
+ 
+ </script>
+  <script src="js/globalScripts.js"></script>
   <script type="text/javascript" src="js/jq.js"></script>
   <script type="text/javascript" src="js/loadImages.js"></script>
-  <script type="text/javascript"  charset="utf-8">
-  var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
-
-    // Wait for Cordova to connect with the device
-    //
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-	function getImage() {
-		
-	    navigator.device.capture.captureImage(onSuccess, onFail,
-	
-									{ 
-									  limit: 1,
-									  quality: 75,
-									  allowEdit: true,
-								      destinationType: destinationType.DATA_URI
-									}
-	);
-	}
-
-
-
-	function onFail(error) {
-	    alert("Fail when getting image. Code = " + error.code);
-	}
-
-
-    function onPhotoDataSuccess(imageData) {
-      // Uncomment to view the base64 encoded image data
-      // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
-
-    // Called when a photo is successfully retrieved
-    //
-    function onSuccess(imageURI) {
-      // Uncomment to view the image file URI 
-      alert(imageURI);
-
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
-    }
-
-    // A button will call this function
-    //
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-	navigator.device.capture.captureImage(onSuccess, onFail, { quality: 80, 
-	    destinationType: Camera.DestinationType.FILE_URI }); 
-}
-	
-
-	function onFail(message) {
-	    alert('Failed because: ' + message);
-	}
-
-      
-
-    // A button will call this function
-    //
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.DATA_URI });
-    }
-
-    // A button will call this function
-    //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
-
-    // Called if something bad happens.
-    // 
-    function onFail(message) {
-      alert('Failed because: ' + message);
-    }
-  
-  </script>
+   
 </section>
 </body>
 </html>

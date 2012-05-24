@@ -81,7 +81,7 @@ Swipe.prototype = {
 	
 	
 	
-	this.loadImages(this.start, this.end, this.increase);
+	//this.loadImages(this.start, this.end, this.increase);
 	
     // return immediately if their are less than two slides
     if (this.length < 2) return null;
@@ -342,6 +342,27 @@ Swipe.prototype = {
 		console.log("navString = " + navString);
 		console.log("nav = " + num);
 		console.log("slides length = " + this.length);
+		
+		
+		if (this.length == 2){
+			
+			if (num ==0){
+				console.log("num=0");
+				
+				$(".carM1").removeClass("carM1Active");
+				$(".carFx1").addClass("carFx1Active");
+				
+				
+				} else {
+				console.log("num=0");
+				$(".carFx1").removeClass("carFx1Active");
+				$(".carM1").addClass("carM1Active");
+				}
+			
+			
+			
+			}
+		
  
 	  }, 
 	  
@@ -364,8 +385,7 @@ Swipe.prototype = {
 		this.end =  end;
 		
 
-		$('#item0 img').css('display', 'none');
-		$('#item0 img').fadeIn(750);
+		
 		
 		
 		

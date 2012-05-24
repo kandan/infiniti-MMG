@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', loaded, false);
       <p class="action"></p>
       <div id="wrapper1">  
 		<div id="scroller1" class="scroller">
-    		<img src="images/blank.png" width="1024" height="899">
+    		<img src="images/blank.png">
 		</div>
 	  </div>
       
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', loaded, false);
       <p class="action"></p>
       <div id="wrapper2">
 	<div id="scroller2" class="scroller">
-    	<img src="images/blank.png" width="1024" height="1066">
+    	<img src="images/blank.png" >
 		</div>
 </div>
       </div>
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', loaded, false);
       <p class="action"></p>
 <div id="wrapper3">
 	<div id="scroller3" class="scroller">
-		<img src="images/blank.png" width="1024" height="60">
+		<img src="images/blank.png">
     </div>
 </div> <!-- end of wrapper -->
       
@@ -108,8 +108,7 @@ document.addEventListener('DOMContentLoaded', loaded, false);
 		<img src="images/blank.png" width="1024" height="1335">
     </div>
 </div> <!-- end of wrapper -->
-  
-      </div>
+	</div>
     </div>
   </div>
   </div>
@@ -118,7 +117,13 @@ document.addEventListener('DOMContentLoaded', loaded, false);
   <script type="text/javascript" src="js/instructions-swipe.js"></script> 
   <script>
         var slider4 = new Swipe(document.getElementById('slider4'));
-		slider4.slide(0,500);
+		var num_of_slides = slider4.length;
+		console.log("num_of_slides = " + num_of_slides);
+		slider4.loadImages(0,num_of_slides,0);
+		
+		 $('#item0 img').css('display', 'none');
+ 		 $('#item0 img').fadeIn(750);
+		
 		var qsParm = new Array();
 function qs() {
 var query = window.location.search.substring(1);
@@ -153,7 +158,6 @@ if  (qsParm['instru'] == null){
 		
 		
         </script> 
-  <script type="text/javascript" src="js/jq.js"></script> 
-  <script type="text/javascript" src="js/loadInstructions.js"></script> 
+  <!--<script type="text/javascript" src="js/loadInstructions.js"></script>--> 
 </section></body>
 </html>

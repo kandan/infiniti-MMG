@@ -81,7 +81,7 @@ Swipe.prototype = {
 	
 	
 	
-	this.loadImages(this.start, this.end, this.increase);
+	//this.loadImages(this.start, this.end, this.increase);
 	
     // return immediately if their are less than two slides
     if (this.length < 2) return null;
@@ -308,7 +308,8 @@ Swipe.prototype = {
 	
 	swapNav: function(index) {
 		var group = "MMG";
-		//var group = "CW";
+		//var group = "CW_MG1";
+		//var group = "CW_MG2";
 		//var group = "DG";
 		//var group = "CPW";
 		//var group = "NMG";
@@ -340,12 +341,14 @@ Swipe.prototype = {
 		
 		$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/standard/title0" + index_plus_one +".png"});
 		
+		
  
 	  }, 
 	  
 	 	loadImages: function (start, end, increase){
 		var group = "MMG";
-		
+		//var group = "CW_MG1";
+		//var group = "CW_MG2";
 		//var group = "CW";
 		//var group = "DG";
 		//var group = "CPW";
@@ -356,9 +359,20 @@ Swipe.prototype = {
 		
 		for(var i = start; i <= end; i++){
 			added = added+1;
-			$('#item'+i+' img').attr({ src: "images/"+group+"/standard/inst0"+i+".jpg"});
+			$('#item'+i+' img').attr({ src: "images/"+group+"/standard/Instr0"+i+".jpg"});
 			//console.
 		}
+		
+		/*if (end < 4){
+			$(".leg4Btn4").hide();
+			$(".leg3Btn3").addClass("three");
+			}
+		if (end < 4){
+			$(".leg4Btn4").hide();
+			$(".leg3Btn3").hide();
+			$(".leg2Btn2").addClass("three");
+			}*/
+		
 		
 		this.start =  start;
 		this.end =  end;

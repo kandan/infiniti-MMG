@@ -31,10 +31,10 @@
     <div>
     
     
-      <div id="item55" style='display:block; color:#FFF;'><img src="images/cars/infiniti-fx-large.jpg" width="1024" height="674" />
+      <div id="itemCars" style='display:block; color:#FFF;'><img src="images/cars/infiniti-fx-large.jpg" width="1024" height="674" />
       </div>
       
-      <div id="item56" style='display:none; color:#FFF;'><img src="images/cars/infiniti-M-large.jpg" width="1024" height="674" />
+      <div id="itemCars2" style='display:none; color:#FFF;'><img src="images/cars/infiniti-M-large.jpg" width="1024" height="674" />
       </div>
       
       
@@ -48,12 +48,14 @@
   <script type="text/javascript" src="js/swipe.js"></script> 
   <script>
         var slider4 = new Swipe(document.getElementById('slider4'));
+		var num_of_slides = slider4.length;
+		console.log("num_of_slides = " + num_of_slides);
 		
 		
 		$(document).ready(function(){
-			
-			
-				
+		$('#itemCars img').css('display', 'none');
+ 		$('#itemCars img').fadeIn(750);
+		
 			$(".carFx1").click(function(){
 				$(".carM1").removeClass("carM1Active");
 				$(this).addClass("carFx1Active");
@@ -62,7 +64,7 @@
 				$(".carFx1").removeClass("carFx1Active");
 				$(this).addClass("carM1Active");
 				});
-				
+					
 			
 			});
         </script> 
