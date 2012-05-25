@@ -114,10 +114,13 @@ iScroll.prototype = {
 
 		if (that.options.topOnDOMChanges && (that.x!=0 || that.y!=0)) {
 			that.scrollTo(0,0,'0');
+			
 		}
 	},
 
 	refresh: function () {
+		console.log("refreshed");
+		
 		var that = this,
 			resetX = that.x, resetY = that.y,
 			snap;
@@ -128,6 +131,7 @@ iScroll.prototype = {
 		that.scrollerHeight = that.element.offsetHeight;
 		that.maxScrollX = that.scrollWidth - that.scrollerWidth;
 		that.maxScrollY = that.scrollHeight - that.scrollerHeight;
+		console.log("Max Y = " + that.maxScrollY);
 		that.directionX = 0;
 		that.directionY = 0;
 
@@ -182,6 +186,7 @@ iScroll.prototype = {
 	},
 
 	setPosition: function (x, y, hideScrollBars) {
+		
 		var that = this;
 		
 		that.x = x;
@@ -217,6 +222,7 @@ iScroll.prototype = {
 	},
 		
 	touchStart: function(e) {
+		console.log('touchStart');
 		var that = this,
 			matrix;
 		
@@ -258,6 +264,7 @@ iScroll.prototype = {
 	},
 	
 	touchMove: function(e) {
+		console.log('touchMove');
 		if (!this.scrolling) {
 			return;
 		}
@@ -310,7 +317,7 @@ iScroll.prototype = {
 		if (!this.scrolling) {
 			return;
 		}
-
+		console.log('touchEnd');
 		var that = this,
 			time = e.timeStamp - that.scrollStartTime,
 			point = isTouch ? e.changedTouches[0] : e,
@@ -387,6 +394,7 @@ iScroll.prototype = {
 	},
 
 	resetPosition: function () {
+		console.log('resetPosition');
 		var that = this,
 			resetX = that.x,
 		 	resetY = that.y;
@@ -395,16 +403,19 @@ iScroll.prototype = {
 			resetX = 0;
 		} else if (that.x < that.maxScrollX) {
 			resetX = that.maxScrollX;
+			console.log("X = " + resetX);
 		}
 
 		if (that.y >= 0 || that.maxScrollY > 0) {
 			resetY = 0;
 		} else if (that.y < that.maxScrollY) {
 			resetY = that.maxScrollY;
+			console.log("Y = " + resetY);
 		}
 		
 		if (resetX != that.x || resetY != that.y) {
 			that.scrollTo(resetX, resetY);
+			console.log(resetX + " : " + resetY);
 		} else {
 			if (that.moved) {
 				that.onScrollEnd();		// Execute custom code on scroll end
@@ -422,8 +433,9 @@ iScroll.prototype = {
 	},
 	
 	snap: function (x, y) {
+		console.log('touchEnd');
 		var that = this, time;
-
+		
 		if (that.directionX > 0) {
 			x = Math.floor(x/that.scrollWidth);
 		} else if (that.directionX < 0) {
@@ -485,6 +497,7 @@ iScroll.prototype = {
 	},
 	
 	scrollToPage: function (pageX, pageY, runtime) {
+		console.log('scrollToPage');
 		var that = this, snap;
 
 		if (!that.options.snap) {
@@ -515,6 +528,7 @@ iScroll.prototype = {
 	},
 
 	scrollToElement: function (el, runtime) {
+		console.log('scrollToElement');
 		el = typeof el == 'object' ? el : this.element.querySelector(el);
 
 		if (!el) {

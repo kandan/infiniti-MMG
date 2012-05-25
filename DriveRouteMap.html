@@ -7,9 +7,9 @@
 <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
-<script type="text/javascript" src="js/childbrowser.js"></script>
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
-<script type="text/javascript" src="js/swipe.js"></script> 
+<script type="text/javascript" src="js/swipe.js"></script>
+
 </head>
 <body>
 <section>
@@ -20,7 +20,7 @@
     <li style="width:129px;"><a href="#" onClick="loadMap(main);"><img src="images/nav-4.png" width="129" height="55"></a></li>
     <li style="width:121px;"><a href="Cars.html"><img src="images/nav-5.png" width="121" height="55"></a></li>
     <li style="width:110px;"><a href="http://www.youtube.com/user/Infiniti"><img src="images/nav-6.png" width="110" height="55"></a></li>
-    <li style="width:113px;"><a href="#" onClick="getImage();"><img src="images/nav-7.png" width="113" height="55"></a></li>
+    <li style="width:113px;"><a href="#"  onClick="getImage();" ><img src="images/nav-7.png" width="113" height="55" id="camera"></a></li>
     <li style="width:103px;"><img src="images/nav-8.png" width="103" height="55"></li>
   </ul>
   <div class="nav"><a href="#" onClick="slider4.slide(4, 500);" class="swipe leg4Btn4"></a>
@@ -38,7 +38,7 @@
       </div>
       <div id="item1" style='display:block; color:#FFF;'><img src="images/blank.png" width="1024" height="630" usemap="#Map" />
 <map name="Map" id="Map">
-     <area shape="rect" coords="322,246,415,283" href="#" onClick="loadMap(MMG1);" />
+     <area shape="rect" coords="322,246,415,283" href="googleMaps.html?start=Queenstown, NZ&end=Wanaka, NZ" onClick="loadMap(MMG1);" />
      <area shape="rect" coords="425,246,513,282" href="DriveRouteInstructions.html?instru=0" />
 </map>
       </div>
@@ -62,19 +62,24 @@
     </div>
   </div>
   <footer></footer>
- <script>var slider4 = new Swipe(document.getElementById('slider4'));
- 
+  <script src="js/globalScripts.js"></script>
+ <script type="text/javascript">
+ var slider4 = new Swipe(document.getElementById('slider4'));
  var num_of_slides = slider4.length;
  console.log("num_of_slides = " + num_of_slides);
- slider4.loadImages(0,num_of_slides,0);
+ var backup = false;
+ var group = "MMG";
+ slider4.loadImages(0,num_of_slides,group, backup);
  
  $('#item0 img').css('display', 'none');
- $('#item0 img').fadeIn(750);
+ $('#item0 img').fadeIn(1500);
+ 
+ 
+
+ 
  
  </script>
-  <script src="js/globalScripts.js"></script>
-  <script type="text/javascript" src="js/jq.js"></script>
-  <script type="text/javascript" src="js/loadImages.js"></script>
+  
    
 </section>
 </body>

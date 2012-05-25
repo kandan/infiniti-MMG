@@ -28,6 +28,8 @@ window.Swipe = function(element, options) {
   this.container.style.overflow = 'hidden';
   this.element.style.listStyle = 'none';
 
+  this.dir;
+
   // trigger slider initialization
   this.setup();
 
@@ -57,8 +59,8 @@ Swipe.prototype = {
     this.length = this.slides.length;
 	
 	// length
+	
 		var num_of_items = this.length
-		
 		this.start = null;
 		this.end = null;
 		this.increase = 0;
@@ -306,14 +308,11 @@ Swipe.prototype = {
   
 	
 	swapNav: function(index) {
-		var group = "MMG";
-		//var group = "CW";
-		//var group = "DG";
-		//var group = "CPW";
-		//var group = "NMG";
+		var group = this.group;
+		var dir = this.dir;
 		var start = this.start;
 		var end = this.end;
-		
+		var loc = this.loc;
 		
 		var num = index;
 	  	var routeMap = $(".nav a");
@@ -334,9 +333,9 @@ Swipe.prototype = {
 		
 		$(navString).addClass("leg"+num+"Btn"+num+"Active");
 		
-		$('.topNavTxt img').attr({ src: "images/Leg0"+num+"-title.png", height:"39", width:"355"});		
+		$('.topNavTxt img').attr({ src: loc + "images/"+group+"/"+ dir+"/Leg0"+num+"-title.png", height:"39", width:"355"});		
 		
-		$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/standard/title0" + num +".png"});
+		//$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/"+ dir+"/title0" + num +".png"});
 		console.log("swap index = " + num);
 		console.log("images/Leg0"+num+"-title.png");
 		console.log("navString = " + navString);
@@ -366,23 +365,33 @@ Swipe.prototype = {
  
 	  }, 
 	  
-	 	loadImages: function (start, end, increase){
-		var group = "MMG";
-		//var group = "CW";
-		//var group = "DG";
-		//var group = "CPW";
-		//var group = "NMG";
+	 	loadImages: function (start, end, group, backup){
+		var dir;
+		console.log("group = " + group + " backUp = " + backup );
+		var loc = "./";
+		if (backup){
+			dir = "backup";
+			loc = "../";
+			} else {
+				dir = "standard";
+				}
+		
 		
 		//default setting
-		for(var i = start; i <= end; i++){
-			var added = i+increase;
-			var imagenumber = added;
-			$('#item'+i+' img').attr({ src: "images/"+group+"/standard/map0"+i+".jpg"});
+		for(var i = start; i < end; i++){
+			//var added = i+increase;
+			var _src = loc+"images/"+group+"/"+dir+"/map0"+i+".jpg";
+			$('#item'+i+' img').attr({ src: _src});
 			
 		}
 		
+		$('.topNavTxt img').attr({ src: loc+"images/"+group+"/"+ dir+"/Leg0"+0+"-title.png", height:"39", width:"355"});
+		
 		this.start =  start;
 		this.end =  end;
+		this.dir = dir;
+		this.group = group;
+		this.loc = loc;
 		
 
 		

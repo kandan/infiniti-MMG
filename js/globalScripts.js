@@ -22,16 +22,12 @@ function loadMap(url){
 	//window.open (url,"MapsWindow");
 	}
 
-
-
-  var pictureSource;   // picture source
+    var pictureSource;   // picture source
     var destinationType; // sets the format of returned value 
 
     // Wait for Cordova to connect with the device
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
-	
-			
+    window.addEventListener("deviceready",onDeviceReady,false);
 
     // Cordova is ready to be used!
     //
@@ -47,23 +43,17 @@ function loadMap(url){
 		
 	    navigator.device.capture.captureImage(onSuccess, onFail,
 	
-									{ 
-									  limit: 1,
-									  quality: 75,
-									  allowEdit: true,
-								      destinationType: destinationType.DATA_URI
-									}
+		   { 
+			 limit: 1,
+			 quality: 75,
+			 allowEdit: true,
+			 destinationType: destinationType.DATA_URI
+		   }
 	);
 	}
 
 
-
-	function onFail(error) {
-	    alert("Fail when getting image. Code = " + error.code);
-	}
-
-
-    function onPhotoDataSuccess(imageData) {
+    /*function onPhotoDataSuccess(imageData) {
       // Uncomment to view the base64 encoded image data
       // console.log(imageData);
 
@@ -79,64 +69,34 @@ function loadMap(url){
       // The inline CSS rules are used to resize the image
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
-    }
+    }*/
 
     // Called when a photo is successfully retrieved
     //
     function onSuccess(imageURI) {
       // Uncomment to view the image file URI 
-      alert(imageURI);
+      console.log(imageURI);
 
-      // Get image handle
-      //
-      var largeImage = document.getElementById('largeImage');
-
-      // Unhide image elements
-      //
-      largeImage.style.display = 'block';
-
-      // Show the captured photo
-      // The inline CSS rules are used to resize the image
-      //
-      largeImage.src = imageURI;
+      
     }
-
-    // A button will call this function
-    //
-    function capturePhoto() {
-      // Take picture using device camera and retrieve image as base64-encoded string
-	navigator.device.capture.captureImage(onSuccess, onFail, { quality: 80, 
-	    destinationType: Camera.DestinationType.FILE_URI }); 
-}
-	
-
-	function onFail(message) {
-	    alert('Failed because: ' + message);
-	}
 
       
 
-    // A button will call this function
+    /*// A button will call this function
     //
     function capturePhotoEdit() {
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
         destinationType: destinationType.DATA_URI });
-    }
+    }*/
 
     // A button will call this function
     //
-    function getPhoto(source) {
-      // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
-        sourceType: source });
-    }
 
     // Called if something bad happens.
     // 
     function onFail(message) {
-      alert('Failed because: ' + message);
+      console.log('Failed because: ' + message);
     }
 
 	
@@ -156,7 +116,8 @@ function loadMap(url){
 		    console.log("onOpenExternal!");
 		}
     
-    
+	
+	
 	
 
     

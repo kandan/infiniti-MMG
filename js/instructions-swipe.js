@@ -16,7 +16,7 @@ window.Swipe = function(element, options) {
   // retreive options
   this.options = options || {};
   this.index = this.options.startSlide || 0;
-  this.speed = this.options.speed || 300;
+  this.speed = this.options.speed || 400;
   this.callback = this.options.callback || function() {};
   this.delay = this.options.auto || 0;
 
@@ -36,14 +36,14 @@ window.Swipe = function(element, options) {
 
   // add event listeners
   if (this.element.addEventListener) {
-    this.element.addEventListener('touchstart', this, false);
+   /* this.element.addEventListener('touchstart', this, false);
     this.element.addEventListener('touchmove', this, false);
     this.element.addEventListener('touchend', this, false);
     this.element.addEventListener('webkitTransitionEnd', this, false);
     this.element.addEventListener('msTransitionEnd', this, false);
     this.element.addEventListener('oTransitionEnd', this, false);
-    this.element.addEventListener('transitionend', this, false);
-    window.addEventListener('resize', this, false);
+    this.element.addEventListener('transitionend', this, false);*/
+    //window.addEventListener('resize', this, false);
   }
 
 };
@@ -58,7 +58,8 @@ Swipe.prototype = {
 	
 	// length
 		var num_of_items = this.length
-		
+		//this.loc = "./";
+		//this.dir = null;
 		this.start = null;
 		this.end = null;
 		this.increase = 0;
@@ -307,12 +308,9 @@ Swipe.prototype = {
   
 	
 	swapNav: function(index) {
-		var group = "MMG";
-		//var group = "CW_MG1";
-		//var group = "CW_MG2";
-		//var group = "DG";
-		//var group = "CPW";
-		//var group = "NMG";
+		var group = this.group;
+		var dir = this.dir;
+		var loc = this.loc;
 		var start = this.start;
 		var end = this.end;
 		
@@ -337,48 +335,41 @@ Swipe.prototype = {
 		
 		$(navString).addClass("leg"+index_plus_one+"Btn"+index_plus_one+"Active");
 		
-		$('.topNavTxt img').attr("src", "images/Leg0"+num+"-title.png");		
+		//$('.topNavTxt img').attr({ src: loc+"images/"+group+"/"+ dir+"/Leg0"+num+"-title.png", height:"39", width:"355"});		
 		
-		$('.topInstructionsNavTxt img').attr({ src: "images/"+group+"/standard/title0" + index_plus_one +".png"});
+		$('.topInstructionsNavTxt img').attr({ src: loc+"images/"+group+"/"+ dir+"/title0" + index_plus_one +".png"});
 		
 		
  
 	  }, 
 	  
-	 	loadImages: function (start, end, increase){
-		var group = "MMG";
-		//var group = "CW_MG1";
-		//var group = "CW_MG2";
-		//var group = "CW";
-		//var group = "DG";
-		//var group = "CPW";
-		//var group = "NMG";
-	
+	 	loadImages: function (start, end, group, backup){
+		
+		console.log("group = " + group + " backUp = " + backup );
+		var loc = "./";
+		if (backup){
+			dir = "backup";
+			loc = "../";
+			} else {
+				dir = "standard";
+				}
+		
+		
 		//default setting
-		var added = 0;
-		
-		for(var i = start; i <= end; i++){
-			added = added+1;
-			$('#item'+i+' img').attr({ src: "images/"+group+"/standard/Instr0"+i+".jpg"});
-			//console.
+		for(var i = start; i < end; i++){
+			//var added = i+increase;
+			var _src = loc+"images/"+group+"/"+dir+"/Instr0"+i+".jpg";
+			$('#item'+i+' img').attr({ src: _src});
+			
 		}
-		
-		/*if (end < 4){
-			$(".leg4Btn4").hide();
-			$(".leg3Btn3").addClass("three");
-			}
-		if (end < 4){
-			$(".leg4Btn4").hide();
-			$(".leg3Btn3").hide();
-			$(".leg2Btn2").addClass("three");
-			}*/
-		
+		$('.topInstructionsNavTxt img').attr({ src: loc+"images/"+group+"/"+ dir+"/title01.png"});
 		
 		this.start =  start;
 		this.end =  end;
-
+		this.dir = dir;
+		this.group = group;
+		this.loc = loc;
 		
-
-	}
+		}
 };
 

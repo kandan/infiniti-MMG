@@ -3,32 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>infiniti slider</title>
+<title>Drive Route Instruction</title>
 <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/cordova-1.7.0.js"></script>
 <script src="js/globalScripts.js"></script>
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
-<script type="text/javascript" src="js/iscroll.js"></script>
+
+<script type="text/javascript" src="js/instructions-swipe.js"></script> 
 <script type="text/javascript">
+	
 var myScroll1;
 var myScroll2;
 var myScroll3;
 var myScroll4;
 
-function loaded() {
-	setHeight();	// Set the wrapper height. Not strictly needed, see setHeight() function below.
 
+function loaded() {
+	console.log('loaded');
+	setHeight();
+		// Set the wrapper height. Not strictly needed, see setHeight() function below.
 	// Please note that the following is the only line needed by iScroll to work. Everything else here is to make this demo fancier.
 	myScroll1 = new iScroll('scroller1', {desktopCompatibility:true});
 	myScroll2 = new iScroll('scroller2', {desktopCompatibility:true});
-	myScroll3 = new iScroll('scroller3', {desktopCompatibility:true});
+	//myScroll3 = new iScroll('scroller3', {desktopCompatibility:true});
 	myScroll4 = new iScroll('scroller4', {desktopCompatibility:true});
 }
 
 // Change wrapper height based on device orientation. Not strictly needed by iScroll, you may also use pure CSS techniques.
 function setHeight() {
-		wrapperH = 600;
+	
+	wrapperH = 630;
 		
 	document.getElementById('wrapper1').style.height = (wrapperH ) + 'px';
 	document.getElementById('wrapper2').style.height = (wrapperH)  + 'px';
@@ -36,25 +41,17 @@ function setHeight() {
 	document.getElementById('wrapper4').style.height = (wrapperH)  + 'px';
 	
 }
-
-// Check screen size on orientation change
-//window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', setHeight, false);
-
-// Prevent the whole screen to scroll when dragging elements outside of the scroller (ie:header/footer).
-// If you want to use iScroll in a portion of the screen and still be able to use the native scrolling, do *not* preventDefault on touchmove.
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
-// Load iScroll when DOM content is ready.
+//document.addEventListener("deviceready",deviceloaded,false);
 document.addEventListener('DOMContentLoaded', loaded, false);
-</script>
 
+</script>
 </head>
 <body><section>
 		<ul id="main-nav"> 
             <li style="width:90px;"><a href="home.html"><img src="images/nav-1.png" width="90" height="55"></a></li>
             <li style="width:152px;"><a href="DriveRouteMap.html"><img src="images/nav-2.png" width="152" height="55"></a></li>
             <li style="width:198px;"><a href="DriveRouteInstructions.html"><img src="images/nav-3-on.png" width="198" height="55"></a></li>
-            <li style="width:129px;"><a href="#" onClick="loadMap(main);"><img src="images/nav-4.png" width="129" height="55"></a></li>
+            <li style="width:129px;"><a href="googleMaps.html" onClick="loadMap(main);"><img src="images/nav-4.png" width="129" height="55"></a></li>
             <li style="width:121px;"><a href="Cars.html"><img src="images/nav-5.png" width="121" height="55"></a></li>
             <li style="width:110px;"><a href="http://www.youtube.com/user/Infiniti"><img src="images/nav-6.png" width="110" height="55"></a></li>
             <li style="width:113px;"><a href="#" onClick="getImage();"><img src="images/nav-7.png" width="113" height="55"></a></li>
@@ -65,66 +62,57 @@ document.addEventListener('DOMContentLoaded', loaded, false);
                    <a href="#" onClick="slider4.slide(1, 500);" class="swipe leg2Btn2"></a>
                    <a href="#" onClick="slider4.slide(0, 500);" class="swipe leg1Btn1"></a>
                    
-    <div class="topInstructionsNavTxt"><img src="images/blank.png" width="355" height="39" /></div>
+  <div class="topInstructionsNavTxt"><img src="images/blank.png" width="355" height="39" /></div>
   </div>
+  <!-- end of Nav -->
+  
   <div id='slider4' class='swipe'>
     <div>
-    
-    
+      <!-- end of wrapper -->
       <div id="item0" style='display:block; color:#FFF; '>
-      <p class="action"></p>
-      <div id="wrapper1">  
-		<div id="scroller1" class="scroller">
-    		<img src="images/blank.png">
-		</div>
-	  </div>
-      
+      	<p class="action"></p>
+        <div id="wrapper1">  
+             <div id="scroller1" class="scroller" >
+                 
+                 <img src="images/blank.png"  ></div>
+      	</div>
       </div>
+      <!-- end of wrapper -->
       <div id="item1" style='display:none ; color:#FFF;'>
-      <p class="action"></p>
-      <div id="wrapper2">
-	<div id="scroller2" class="scroller">
-    	<img src="images/blank.png" >
-		</div>
-</div>
+      	<p class="action"></p>
+      	<div id="wrapper2">
+			<div id="scroller2"  class="scroller">
+    			
+                <img src="images/blank.png" > </div>
+      	</div>
       </div>
+      <!-- end of wrapper -->
       <div id="item2" style='display:none; color:#FFF;'>
-      <p class="action"></p>
-<div id="wrapper3">
-	<div id="scroller3" class="scroller">
-		<img src="images/blank.png">
-    </div>
-</div> <!-- end of wrapper -->
-      
-      
-      
-            </div>
-      
+      	<p class="action"></p>
+		<div id="wrapper3">
+			<div id="scroller3" class="scroller">
+				
+                <img src="images/blank.png" > </div>
+	  	</div>	
+      </div>
+      <!-- end of wrapper -->
       <div id="item3" style='display:none; color:#000;'>
       	<p class="action"></p>
-       
-<div id="wrapper4">
-	<div id="scroller4" class="scroller">
-		<img src="images/blank.png" width="1024" height="1335">
+        <div id="wrapper4">
+			<div id="scroller4" class="scroller">
+				
+                <img src="images/blank.png" > </div>
+		</div>
+	  </div>
+      <!-- end of wrapper -->
+      
     </div>
-</div> <!-- end of wrapper -->
-	</div>
-    </div>
   </div>
-  </div>
-  </div>
-  
-  <script type="text/javascript" src="js/instructions-swipe.js"></script> 
-  <script>
-        var slider4 = new Swipe(document.getElementById('slider4'));
-		var num_of_slides = slider4.length;
-		console.log("num_of_slides = " + num_of_slides);
-		slider4.loadImages(0,num_of_slides,0);
+<script type="text/javascript" utf="">
+        
+		 
 		
-		 $('#item0 img').css('display', 'none');
- 		 $('#item0 img').fadeIn(750);
-		
-		var qsParm = new Array();
+var qsParm = new Array();
 function qs() {
 var query = window.location.search.substring(1);
 var parms = query.split('&');
@@ -141,23 +129,50 @@ qsParm['code'] = null;
 qsParm['desc'] = null;
 qs();
 
-//alert(qsParm['num'])
-var index = eval(qsParm['instru']);
 
-if  (qsParm['instru'] == null){
-		var slider4 = new Swipe(document.getElementById('slider4'));
-		slider4.slide(0, 500)
+var index = eval(qsParm['instru']);
+var slider4 = new Swipe(document.getElementById('slider4'));
+var num_of_slides = slider4.length;
+var backup = false;
+var group = "MMG";
+
+
+if  (qsParm['instru'] == null)
+	
+	{
+		//slider4.slide(0, 500)
+		console.log("num_of_slides = " + num_of_slides);
+		slider4.loadImages(0,num_of_slides, group, backup);
 	} 
 	
-	else 
+	else
+	
 	{
-		var slider4 = new Swipe(document.getElementById('slider4'));
+		console.log("intru = " + qsParm['instru']);
 		slider4.slide(index, 500);
+		
+ 		slider4.loadImages(0,num_of_slides, group, backup);
 	}
+	
+</script> 
+<script type="text/javascript" src="js/iscroll.js"></script>
 
-		
-		
-        </script> 
-  <!--<script type="text/javascript" src="js/loadInstructions.js"></script>--> 
+<script type="text/javascript">
+var myScroll;
+function loaded2() {
+	setTimeout(function () {
+		console.log('reset load');
+		myScroll1 = new iScroll('scroller1', {desktopCompatibility:true});
+		myScroll2 = new iScroll('scroller2', {desktopCompatibility:true});
+	//myScroll3 = new iScroll('scroller3', {desktopCompatibility:true});
+		myScroll4 = new iScroll('scroller4', {desktopCompatibility:true});
+	}, 500);
+}
+window.addEventListener('load', loaded2, false);
+
+$('#item0 img').css('display', 'none');
+$('#item0 img').fadeIn(1500);
+
+</script>
 </section></body>
 </html>
